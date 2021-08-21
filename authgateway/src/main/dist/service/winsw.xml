@@ -1,0 +1,22 @@
+<!--Configuration file which controls the behavior of the windows service. This file should be places in
+the same location as winsw.exe with same name
+For more information visit:
+    https://github.com/winsw/winsw/blob/master/doc/xmlConfigFile.md
+-->
+<service>
+    <id>@dist.project.id@</id>
+    <name>@dist.project.name@</name>
+    <description>@dist.project.description@</description>
+    <env name="JDK_HOME" value="C:\Program Files\jdk8"> </env>
+    <executable>%JDK_HOMe%/bin/java</executable>
+    <workingdirectory>%BASE%</workingdirectory> <!--BASE points to current directory that contains the renamed wWinSW.exe-->
+    <arguments>
+        <argument>-jar</argument>
+        <argument>-DSpring.profile.active=test</argument>
+        <argument>-DSpring.config.location=%BASE%\application.yml</argument>
+        <argument>%BASE%\</argument>
+    </arguments>
+    <log mode="roll-by-time">
+        <pattern>yyyy-MM-dd</pattern>
+    </log>
+</service>

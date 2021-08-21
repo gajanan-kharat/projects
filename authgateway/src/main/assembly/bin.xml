@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="" ?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3
+          https://maven.apache.org/xsd/assembly-1.1.3.xsd">
+    <id>windows</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <files>
+        <file>
+            <source>${build.bindir}/winsw.xml</source>
+            <outputDirectory/>
+            <destName>${dist.project.id}.xml</destName>
+        </file>
+
+    <files>
+        <file>
+            <source>${build.bindir}/winsw.exe</source>
+            <outputDirectory/>
+            <destName>${dist.project.id}.exe</destName>
+        </file>
+
+    <files>
+        <file>
+            <source>${build.bindir}/${dist.project.jar}</source>
+            <outputDirectory/>
+        </file>
+        <file>
+            <source>${build.bindir}/application-${spring.profile.active}.yml</source>
+            <outputDirectory/>
+            <destName>application.yml</destName>
+        </file>
+    </files>
+    </assembly>
