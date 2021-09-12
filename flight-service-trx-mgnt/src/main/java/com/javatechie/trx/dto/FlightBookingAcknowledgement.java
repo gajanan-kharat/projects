@@ -15,14 +15,5 @@ public class FlightBookingAcknowledgement {
 	
 	private String pnrNo;
 	private Passanger passanger;
-	public FlightBookingAcknowledgement(String status, double totalFare, String pnrNo, Passanger passanger) {
-		super();
-		this.status = status;
-		this.totalFare = totalFare;
-		this.pnrNo = pnrNo;
-		this.passanger = passanger;
-	}
-	
-	
 
 }

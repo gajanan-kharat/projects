@@ -34,6 +34,7 @@ public class FlightBookingService {
 		 Passanger p = passangerRepository.saveAndFlush(passanger);
 		 
 		 System.out.println("Saved passanger: " + p);
+		 log.info("Saved Passenger: {}",p);
 		 
 		 Payment payment = request.getPayment();
 		 PaymentUtils.validateCreditLimit(payment.getAccountNo(), passanger.getFare());				
